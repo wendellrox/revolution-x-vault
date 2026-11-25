@@ -1,0 +1,372 @@
+/* ==========================================================================
+   REVOLUTION X VAULT — OVERRIDE VISUAL COMPLETO
+   Por RX-Corp — Mantém 100% das funcionalidades originais do Kopia
+   Altera apenas estética, cores e identidade visual
+   ========================================================================== */
+
+/* ===== VARIÁVEIS DO TEMA RX-CORP ===== */
+:root {
+  --rx-bg-main: #ffffff;
+  --rx-bg-subtle: #f8fafc;
+  --rx-border: #e2e8f0;
+  --rx-text-primary: #1e293b;
+  --rx-text-muted: #64748b;
+
+  /* Cores Semânticas */
+  --rx-green: #16a34a;
+  --rx-green-hover: #15803d;
+  --rx-blue: #2563eb;
+  --rx-blue-hover: #1d4ed8;
+  --rx-yellow: #f59e0b;
+  --rx-yellow-hover: #d97706;
+  --rx-red: #dc2626;
+  --rx-red-hover: #b91c1c;
+
+  --rx-radius: 6px;
+}
+
+/* ===== 1. FUNDO BRANCO LIMPO E TIPOGRAFIA ===== */
+html,
+body,
+#root {
+  background-color: var(--rx-bg-main) !important;
+  color: var(--rx-text-primary) !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+
+.container-fluid {
+  color: var(--rx-text-primary) !important;
+}
+
+/* ===== 2. NAVBAR / CABEÇALHO BRANCO RX-CORP ===== */
+#kopia nav.navbar,
+.navbar,
+.navbar-light,
+.navbar-dark {
+  background-color: var(--rx-bg-main) !important;
+  border-bottom: 1px solid var(--rx-border) !important;
+  box-shadow: none !important;
+}
+
+#kopia .navbar-light .navbar-nav .nav-link,
+#kopia .navbar-light .navbar-nav .nav-link.active,
+.navbar .nav-link,
+.navbar-brand {
+  color: var(--rx-text-primary) !important;
+  font-weight: 600;
+}
+
+#kopia .navbar-light .navbar-nav .nav-link:hover,
+.navbar .nav-link:hover {
+  color: var(--rx-blue) !important;
+  filter: none !important;
+}
+
+#kopia .navbar-light .navbar-nav .nav-link.active,
+.navbar .nav-link.active {
+  color: var(--rx-blue) !important;
+  border-bottom: 2px solid var(--rx-blue);
+}
+
+/* Brand styling */
+.rx-brand-icon {
+  font-size: 1.6rem;
+  margin-right: 8px;
+}
+
+.rx-brand-title {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--rx-text-primary) !important;
+  letter-spacing: -0.3px;
+}
+
+.rx-brand-sub {
+  font-size: 0.7rem;
+  color: var(--rx-text-muted) !important;
+  margin-left: 8px;
+  font-weight: 400;
+  align-self: flex-end;
+  padding-bottom: 2px;
+}
+
+/* ===== 3. CARDS, TABELAS E MODAIS ===== */
+.card,
+.modal-content,
+#kopia .modal-footer,
+#kopia .modal-header,
+#kopia .modal-body {
+  background-color: var(--rx-bg-main) !important;
+  border: 1px solid var(--rx-border) !important;
+  border-radius: var(--rx-radius) !important;
+  color: var(--rx-text-primary) !important;
+}
+
+#kopia .table,
+.table {
+  background-color: var(--rx-bg-main) !important;
+  color: var(--rx-text-primary) !important;
+  --bs-table-bg: var(--rx-bg-main);
+  --bs-table-color: var(--rx-text-primary);
+}
+
+#kopia .table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: var(--rx-bg-subtle) !important;
+  color: var(--rx-text-primary) !important;
+}
+
+#kopia .table-striped > tbody > tr:nth-of-type(even) > * {
+  background-color: var(--rx-bg-main) !important;
+  color: var(--rx-text-primary) !important;
+}
+
+#kopia .table-hover > tbody > tr:hover > * {
+  background-color: #eef2ff !important;
+  color: var(--rx-text-primary) !important;
+}
+
+/* ===== 4. GEOMETRIA DOS BOTÕES (QUADRADOS COM CANTOS ARREDONDADOS) ===== */
+#kopia .btn,
+.btn {
+  border-radius: var(--rx-radius) !important;
+  font-weight: 600 !important;
+  padding: 7px 14px !important;
+  border: none !important;
+  transition: background-color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  letter-spacing: 0.01em;
+}
+
+#kopia .btn:hover,
+.btn:hover {
+  filter: none !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#kopia .btn:active,
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-sm,
+#kopia .btn-sm {
+  padding: 5px 10px !important;
+  font-size: 0.85rem !important;
+}
+
+/* ===== 5. MAPEAMENTO SEMÂNTICO DE CORES DOS BOTÕES ===== */
+
+/* VERDE: Ações Positivas (Salvar, Iniciar Backup, Confirmar, Conectar) */
+#kopia .btn-success,
+.btn-success {
+  background-color: var(--rx-green) !important;
+  color: #ffffff !important;
+  border-color: var(--rx-green) !important;
+}
+#kopia .btn-success:hover,
+.btn-success:hover {
+  background-color: var(--rx-green-hover) !important;
+}
+
+/* AZUL: Ações Primárias (Navegar, Restaurar, Baixar, Editar) */
+#kopia .btn-primary,
+#kopia .btn-info,
+.btn-primary,
+.btn-info {
+  background-color: var(--rx-blue) !important;
+  color: #ffffff !important;
+  border-color: var(--rx-blue) !important;
+}
+#kopia .btn-primary:hover,
+#kopia .btn-info:hover,
+.btn-primary:hover,
+.btn-info:hover {
+  background-color: var(--rx-blue-hover) !important;
+}
+
+/* SUBMIT: Mesma cor do verde (ações de envio/confirmação) */
+#kopia .btn-submit {
+  background-color: var(--rx-green) !important;
+  color: #ffffff !important;
+  border-color: var(--rx-green) !important;
+}
+#kopia .btn-submit:hover {
+  background-color: var(--rx-green-hover) !important;
+}
+
+/* AMARELO: Atenção, Sincronizar, Voltar/Cancelar */
+#kopia .btn-warning,
+#kopia .btn-secondary,
+.btn-warning,
+.btn-secondary {
+  background-color: var(--rx-yellow) !important;
+  color: var(--rx-text-primary) !important;
+  border-color: var(--rx-yellow) !important;
+}
+#kopia .btn-warning:hover,
+#kopia .btn-secondary:hover,
+.btn-warning:hover,
+.btn-secondary:hover {
+  background-color: var(--rx-yellow-hover) !important;
+  color: #ffffff !important;
+}
+
+/* CINZA CLARO: Botões neutros */
+#kopia .btn-light,
+.btn-light {
+  background-color: var(--rx-bg-subtle) !important;
+  color: var(--rx-text-primary) !important;
+  border: 1px solid var(--rx-border) !important;
+}
+#kopia .btn-light:hover,
+.btn-light:hover {
+  background-color: #e2e8f0 !important;
+}
+
+/* VERMELHO: Ações Destrutivas (Excluir, Desconectar, Remover) */
+#kopia .btn-danger,
+.btn-danger {
+  background-color: var(--rx-red) !important;
+  color: #ffffff !important;
+  border-color: var(--rx-red) !important;
+}
+#kopia .btn-danger:hover,
+.btn-danger:hover {
+  background-color: var(--rx-red-hover) !important;
+}
+
+/* ===== 6. INPUTS E FORMULÁRIOS ===== */
+#kopia .form-control,
+#kopia .form-select,
+#kopia .form-control-sm,
+.form-control,
+.form-select {
+  background-color: var(--rx-bg-main) !important;
+  border: 1px solid var(--rx-border) !important;
+  border-radius: var(--rx-radius) !important;
+  color: var(--rx-text-primary) !important;
+}
+
+#kopia .form-control:focus,
+#kopia .form-select:focus,
+#kopia .form-control-sm:focus,
+#kopia .form-check-input:focus,
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--rx-blue) !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15) !important;
+}
+
+/* ===== 7. ACCORDION ===== */
+#kopia .accordion-body,
+#kopia .accordion-button,
+#kopia .accordion-button:not(.collapsed) {
+  color: var(--rx-text-primary) !important;
+  background-color: var(--rx-bg-main) !important;
+}
+
+#kopia .accordion-button:hover,
+#kopia .accordion-button:focus {
+  background-color: var(--rx-bg-subtle) !important;
+}
+
+#kopia .accordion-item {
+  border: 1px solid var(--rx-border) !important;
+  border-radius: var(--rx-radius) !important;
+}
+
+/* ===== 8. LINKS ===== */
+#kopia a,
+#kopia .breadcrumb-item,
+#kopia .breadcrumb-item.active {
+  color: var(--rx-blue) !important;
+  --bs-breadcrumb-divider-color: var(--rx-blue);
+}
+
+#kopia a:hover,
+#kopia a:active {
+  color: var(--rx-blue-hover) !important;
+  filter: none !important;
+}
+
+/* ===== 9. BADGES ===== */
+#kopia .badge.bg-policy-badge {
+  background-color: var(--rx-blue) !important;
+  color: #ffffff !important;
+  border-radius: var(--rx-radius) !important;
+}
+
+#kopia .badge.bg-retention-badge-warning {
+  background-color: var(--rx-yellow) !important;
+}
+
+#kopia .badge.bg-retention-badge-danger {
+  background-color: var(--rx-red) !important;
+}
+
+#kopia .badge.bg-retention-badge-success {
+  background-color: var(--rx-green) !important;
+}
+
+#kopia .badge.bg-retention-badge-info {
+  background-color: var(--rx-blue) !important;
+}
+
+#kopia .badge.bg-snapshot-pin {
+  background-color: var(--rx-blue) !important;
+  color: #ffffff !important;
+}
+
+/* ===== 10. PAGINATION ===== */
+#kopia .pagination,
+#kopia .pagination-sm {
+  --bs-pagination-bg: var(--rx-bg-main);
+  --bs-pagination-disabled-bg: var(--rx-bg-main);
+  --bs-pagination-active-bg: var(--rx-blue);
+  --bs-pagination-active-border-color: var(--rx-blue);
+}
+
+/* ===== 11. ADVANCED OPTIONS & PROVIDER PARAMS ===== */
+#kopia .advancedOptions {
+  background-color: var(--rx-bg-subtle) !important;
+  color: var(--rx-text-primary) !important;
+  border: 1px solid var(--rx-border) !important;
+  border-radius: var(--rx-radius) !important;
+}
+
+.providerSpecificParams {
+  background-color: var(--rx-bg-subtle) !important;
+  border: 1px solid var(--rx-border) !important;
+  border-radius: var(--rx-radius) !important;
+}
+
+/* ===== 12. ERROR STYLING ===== */
+.error {
+  color: var(--rx-red) !important;
+}
+
+/* ===== 13. VERSION INFO FOOTER ===== */
+#kopia .version-info {
+  color: var(--rx-text-muted) !important;
+  font-size: 75%;
+}
+
+/* ===== 14. SCROLLBAR (WebKit) ===== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--rx-bg-subtle);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
